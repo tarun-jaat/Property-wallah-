@@ -17,6 +17,7 @@ function ApartmentHead() {
         alignItems:"center",
         justifyContent: 'space-between',
         alignItems: 'flex-start',
+        margin:"2%",
         width: '100%',
         padding: '16px',
         backgroundColor: '#fff',

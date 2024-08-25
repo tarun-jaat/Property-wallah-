@@ -5,7 +5,7 @@ function LocalityReview() {
   // Define base styles
   const containerStyles = {
     padding: '20px',
-    margin: 'auto',
+    margin: '2%',
     backgroundColor: '#f9f9f9',
     borderRadius: '8px',
     boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
@@ -15,6 +15,7 @@ function LocalityReview() {
   const headerStyles = {
     display: 'flex', // Added display flex for alignment
     alignItems: 'center',
+    
     justifyContent: 'space-between',
     flexWrap: 'wrap', // Allow wrapping for responsiveness
   };
@@ -52,6 +53,13 @@ function LocalityReview() {
 
   // Add media queries with JavaScript
   const updateStylesForScreenSize = () => {
+     if (window.matchMedia('(max-width: 768px)').matches) {
+      return {
+        ...containerStyles,
+        padding: '15px',
+        margin: '10px',
+      };
+    }
     if (window.matchMedia('(max-width: 768px)').matches) {
       return {
         ...containerStyles,

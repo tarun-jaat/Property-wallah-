@@ -9,13 +9,14 @@ function OwnerDetails() {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: '100%',
+        
         border: '1px solid #ddd',
         borderRadius: '8px',
+        margin:"1%",
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         padding: '16px',
         backgroundColor: '#fff',
-        marginBottom: '16px', // Add margin for spacing between cards
+        
         boxSizing: 'border-box',
     };
 

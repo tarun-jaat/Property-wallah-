@@ -63,7 +63,7 @@ const reviewsData = {
 
 const ResidentHeader = () => {
   return (
-    <div style={{ padding: '20px', margin: 'auto', boxSizing: 'border-box' }}>
+    <div style={{ padding: '20px', margin: '2%', boxSizing: 'border-box' }}>
       <div className="container">
         <div className="header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
           <div className="head" style={{ marginBottom: '16px' }}>

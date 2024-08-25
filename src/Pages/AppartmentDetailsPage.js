@@ -14,11 +14,13 @@ import MoreAbout from "../components/MoreAbout";
 import LocalityReview from "../components/LocalityReview";
 import ResidentReview from "../components/ResidentReview";
 import SideCard from "../components/SideCard";
+import Header from "../components/Header";
 
 function AppartmentDetailsPage() {
   return (
     <div className="app-container">
       <div className="main-content">
+        <Header/>
         <ImageStack />
         <OwnerDetails />
         <Construction />

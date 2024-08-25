@@ -42,6 +42,7 @@ export default function ImageStack() {
       variant="quilted"
       cols={cols}
       rowHeight={rowHeight}
+      style={{margin:"0"}}
     >
       {itemData.map((item) => (
         <ImageListItem key={item.img} cols={item.cols} rows={item.rows || 1}>

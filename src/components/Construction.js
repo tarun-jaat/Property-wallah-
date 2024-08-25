@@ -7,12 +7,16 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import Typography from '@mui/material/Typography';
 
 const styles = {
+  accordion:{
+    margin:"2%",
+  },
   accordionSummary: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#d2f0fa',
     borderRadius: '10px',
+    
     marginTop: '20px',
   },
   accordionDetails: {
@@ -27,9 +31,9 @@ const styles = {
     borderRadius: '10px',
     backgroundColor:"white"
   },
-  accordionIcon: {
-    marginRight: '8px',
-  },
+  // accordionIcon: {
+  //   marginRight: '8px',
+  // },
   heading: {
     fontWeight: 'bold',
   },
@@ -50,7 +54,7 @@ export default function Construction() {
   return (
     <div>
       {data.map((item, index) => (
-        <Accordion key={index}>
+        <Accordion key={index} style={styles.accordion}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls={`panel${index}-content`}

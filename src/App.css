@@ -4,7 +4,6 @@ html, body {
   margin: 0; /* Remove default margin */
 }
 
-/* Remove extra margin from body to avoid unwanted scrollbars */
 body {
   margin: 0;
 }
@@ -12,15 +11,14 @@ body {
 .app-container {
   display: flex;
   height: 100vh; 
-  flex-direction: row; /* Ensure side card and main content are in a row */
+  flex-direction: row; 
 }
 
 .main-content {
-  flex: 1; /* Main content takes up the remaining space */
-  margin: 1.5%;
-  /* Allows vertical scrolling within the main content */
-  /* Set a max-width to ensure the content doesn't stretch too much */
-  max-width: calc(100% - 300px); /* Adjust width based on the side card width */
+  flex: 1; 
+  /* margin: 1.5%; */
+  
+  max-width: calc(100% - 300px); 
   box-sizing: border-box;
 }
 

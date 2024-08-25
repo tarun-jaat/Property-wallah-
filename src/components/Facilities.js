@@ -4,7 +4,7 @@ import { Button } from '@mui/material'
 
 function Facilities() {
   return (
-    <div>
+    <div style={{margin:"2%"}}>
         <h3>Top Facilities</h3>
         <p>Sheth Zuri Thane presents an exclusive opportunity to own a stunning home that offers all kinds of amenities and facilities. This includes an infinity pool, swimming pool, and easy access to reading lounge.  </p>
         <FacilityCards/>
