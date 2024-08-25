@@ -1,4 +1,5 @@
 import React from "react";
+import '../App.css'
 import ImageStack from "../components/ImageStack";
 import OwnerDetails from "../components/OwnerDetails";
 import Construction from "../components/Construction";
@@ -11,6 +12,8 @@ import MoreAbout from "../components/MoreAbout";
 import LocalityReview from "../components/LocalityReview";
 import ResidentReview from "../components/ResidentReview";
 import SideCard from "../components/SideCard";
+import ApartmentHead from "../components/ApartmentHead";
+import Location from "../components/Location";
 
 function AppartmentDetailsPage() {
   return (

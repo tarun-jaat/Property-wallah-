@@ -12,7 +12,7 @@ function MoreAbout() {
         </div>
         <div style={{ marginBottom: '24px' }}>
             <Button 
-              
+
               style={{  color:"black", textTransform:"Capitalize",fontWeight:"bold" }}
             >
                 Interiors and Other Specifications
