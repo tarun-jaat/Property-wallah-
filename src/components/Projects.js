@@ -4,6 +4,7 @@ import ProjectCard from './ProjectCard'
 
 function Projects() {
   return (
+    
     <div style={main}>
         <div style={{display:"flex", alignItems:"center", justifyContent:"space-around"}}>
             <div>
