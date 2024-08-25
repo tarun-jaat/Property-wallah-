@@ -1,0 +1,94 @@
+/* Default styles */
+.card-container {
+  width: 30%;
+  margin: auto;
+  padding: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card {
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+}
+
+.card-content {
+  font-size: 14px;
+  color: #666;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-heading {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-actions {
+  margin-top: 16px;
+}
+
+.card-developer {
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .card-container {
+    width: 40%; /* Adjust the width for medium screens */
+  }
+
+  .card-content {
+    font-size: 16px; /* Slightly larger font size for better readability */
+  }
+
+  .card-heading {
+    font-size: 18px; /* Slightly smaller heading size */
+  }
+}
+
+@media (max-width: 900px) {
+  .card-container {
+    width: 50%; /* Adjust the width for smaller screens */
+    padding: 12px; /* Reduce padding */
+  }
+
+  .card-content {
+    font-size: 16px; /* Ensure readability on smaller screens */
+  }
+
+  .card-heading {
+    font-size: 16px; /* Adjust heading size */
+  }
+
+  .card-actions {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    width: 100%; /* Full width on very small screens */
+    padding: 8px; /* Reduce padding */
+    box-shadow: none; /* Remove shadow for compact view */
+  }
+
+  .card-content {
+    font-size: 14px; /* Keep font size readable */
+  }
+
+  .card-heading {
+    font-size: 14px; /* Smaller heading size */
+  }
+
+  .card-actions {
+    flex-direction: column; /* Ensure buttons stack vertically */
+  }
+
+  .card-developer {
+    font-size: 14px; /* Adjust font size */
+  }
+}

@@ -1,0 +1,66 @@
+/* Ensure the container uses full viewport height */
+html, body {
+  height: 100%;
+  margin: 0; /* Remove default margin */
+}
+
+/* Remove extra margin from body to avoid unwanted scrollbars */
+body {
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh; 
+  flex-direction: row; /* Ensure side card and main content are in a row */
+}
+
+.main-content {
+  flex: 1; /* Main content takes up the remaining space */
+  margin: 1.5%;
+  /* Allows vertical scrolling within the main content */
+  /* Set a max-width to ensure the content doesn't stretch too much */
+  max-width: calc(100% - 300px); /* Adjust width based on the side card width */
+  box-sizing: border-box;
+}
+
+.side-card-container {
+  width: 300px; 
+  background-color: #fff; /* Background color for visibility */
+  border-left: 1px solid #ddd; /* Optional border for separation */
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  position: sticky; /* Sticks to the side when scrolling */
+  top: 0; /* Stick to the top */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .app-container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .main-content {
+    max-width: 100%; /* Full width of the container */
+    padding-right: 0; /* Remove padding on the right */
+  }
+
+  .side-card-container {
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Auto height to fit content */
+    border-left: none; /* Remove border */
+    border-top: 1px solid #ddd; /* Add top border */
+    box-shadow: none; /* Remove shadow */
+    position: static; /* Remove sticky positioning */
+    order: 1; /* Move to the end in a column layout */
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    /* Adjust further if necessary */
+  }
+
+  .side-card-container {
+    /* Additional adjustments for very small screens */
+  }
+}
