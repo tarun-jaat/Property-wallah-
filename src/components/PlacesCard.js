@@ -12,6 +12,33 @@ const cardData = [
     about: "Lucky Balaji Parisar Phase 2 brings 3,4 BHK Villa in Ayodhya",
     builder: "Lucky Real Estate Developers"
   },
+  {
+    image: "https://newprojects.99acres.com/projects/lucky_real_estate_developers/lucky_balaji_parisar/images/c5jkmzv5_med.jpg",
+    name: "Lucky Balaji Parisar Phase 2",
+    desc: "3,4 BHK House in Ayoodhya Bypass, Bhopal",
+    threebhk: "1.11 - 1.35 Cr",
+    fourbhk: "1.6 Cr",
+    about: "Lucky Balaji Parisar Phase 2 brings 3,4 BHK Villa in Ayodhya",
+    builder: "Lucky Real Estate Developers"
+  },
+  {
+    image: "https://newprojects.99acres.com/projects/lucky_real_estate_developers/lucky_balaji_parisar/images/c5jkmzv5_med.jpg",
+    name: "Lucky Balaji Parisar Phase 2",
+    desc: "3,4 BHK House in Ayoodhya Bypass, Bhopal",
+    threebhk: "1.11 - 1.35 Cr",
+    fourbhk: "1.6 Cr",
+    about: "Lucky Balaji Parisar Phase 2 brings 3,4 BHK Villa in Ayodhya",
+    builder: "Lucky Real Estate Developers"
+  },
+  {
+    image: "https://newprojects.99acres.com/projects/lucky_real_estate_developers/lucky_balaji_parisar/images/c5jkmzv5_med.jpg",
+    name: "Lucky Balaji Parisar Phase 2",
+    desc: "3,4 BHK House in Ayoodhya Bypass, Bhopal",
+    threebhk: "1.11 - 1.35 Cr",
+    fourbhk: "1.6 Cr",
+    about: "Lucky Balaji Parisar Phase 2 brings 3,4 BHK Villa in Ayodhya",
+    builder: "Lucky Real Estate Developers"
+  },
   // Additional card objects...
 ];
 

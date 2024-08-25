@@ -20,7 +20,8 @@ function Projects() {
 
 const main = {
     backgroundColor: "#dcdede",
-    padding:0
+    padding:0,
+    margin:10
 }
 
 export default Projects
