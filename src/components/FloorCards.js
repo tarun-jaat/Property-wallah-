@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import Form from './Form'; // Ensure this path is correct
 
 // Sample data for different apartment types
 const data = {
@@ -25,14 +26,6 @@ const data = {
       price: "1.75 Cr",
       status: "Under Construction",
       date: "Dec'24 possession"
-    },
-    {
-      image: "https://projectcdn.99acres.com/project_data/e9ab44/block1_23451/3D/14225_B1_1F5_3D.jpg",
-      head: "600 sq.ft (55.74 sq.m.)",
-      desc: "Carpet Area | 2 BHK",
-      price: "1.75 Cr",
-      status: "Under Construction",
-      date: "Dec'24 possession"
     }
   ],
   "3 BHK Apartment": [
@@ -43,40 +36,29 @@ const data = {
       price: "2.5 Cr",
       status: "Under Construction",
       date: "Dec'24 possession"
-    },
-    {
-      image: "https://projectcdn.99acres.com/project_data/e9ab44/block1_23451/3D/14225_B1_1F5_3D.jpg",
-      head: "600 sq.ft (55.74 sq.m.)",
-      desc: "Carpet Area | 2 BHK",
-      price: "1.75 Cr",
-      status: "Under Construction",
-      date: "Dec'24 possession"
-    },
-    {
-      image: "https://projectcdn.99acres.com/project_data/e9ab44/block1_23451/3D/14225_B1_1F5_3D.jpg",
-      head: "600 sq.ft (55.74 sq.m.)",
-      desc: "Carpet Area | 2 BHK",
-      price: "1.75 Cr",
-      status: "Under Construction",
-      date: "Dec'24 possession"
-    },
-    {
-      image: "https://projectcdn.99acres.com/project_data/e9ab44/block1_23451/3D/14225_B1_1F5_3D.jpg",
-      head: "600 sq.ft (55.74 sq.m.)",
-      desc: "Carpet Area | 2 BHK",
-      price: "1.75 Cr",
-      status: "Under Construction",
-      date: "Dec'24 possession"
     }
   ],
 };
 
 export default function FloorCards({ type }) {
+  const [isFormOpen, setFormOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
   // Filter data based on the type prop
   const filteredData = data[type] || [];
 
+  const openForm = (item) => {
+    setSelectedItem(item);
+    setFormOpen(true);
+  };
+
+  const closeForm = () => {
+    setSelectedItem(null);
+    setFormOpen(false);
+  };
+
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', margin:"20px" }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', margin: "20px" }}>
       {filteredData.map((item, index) => (
         <Card key={index} sx={{ maxWidth: 345 }}>
           <CardActionArea>
@@ -105,12 +87,62 @@ export default function FloorCards({ type }) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" style={{textTransform: "capitalize"}}>
+            <Button
+              size="small"
+              color="primary"
+              style={{ textTransform: "capitalize" }}
+              onClick={() => openForm(item)}
+            >
               Request Callback
             </Button>
           </CardActions>
         </Card>
       ))}
+
+      {/* Popup Form */}
+      {isFormOpen && (
+        <div style={modalOverlay}>
+          <div style={modalContent}>
+            <Button onClick={closeForm} style={closeButton}>X</Button>
+            <Form type="Request Callback" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
+// Modal overlay style
+const modalOverlay = {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  zIndex: 1000,
+};
+
+// Modal content style
+const modalContent = {
+  backgroundColor: '#fff',
+  borderRadius: '8px',
+  padding: '20px',
+  maxWidth: '70%',
+  width: '100%',
+  position: 'relative',
+};
+
+// Close button style
+const closeButton = {
+  position: 'absolute',
+  top: '10px',
+  right: '10px',
+  background: 'none',
+  border: 'none',
+  fontSize: '1.5rem',
+  cursor: 'pointer',
+};

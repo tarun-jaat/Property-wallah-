@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Form from './Form';
 
 function OwnerDetails() {
+    const [isFormOpen, setFormOpen] = useState(false);
+
+    // Toggle form visibility
+    const openForm = () => setFormOpen(true);
+    const closeForm = () => setFormOpen(false);
+
     const cardContainer = {
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        
         border: '1px solid #ddd',
         borderRadius: '8px',
-        margin:"1%",
+        margin: "1%",
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         padding: '16px',
         backgroundColor: '#fff',
-        
         boxSizing: 'border-box',
     };
 
@@ -57,12 +62,26 @@ function OwnerDetails() {
                         </div>
                     </div>
                     <div>
-                        <Button variant="contained" style={{ textTransform: "capitalize" }}>
+                        <Button
+                            variant="contained"
+                            style={{ textTransform: "capitalize" }}
+                            onClick={openForm}
+                        >
                             View Number
                         </Button>
                     </div>
                 </div>
             ))}
+
+            {/* Popup Form */}
+            {isFormOpen && (
+                <div style={modalOverlay}>
+                    <div style={modalContent}>
+                        <Button onClick={closeForm} style={closeButton}>X</Button>
+                        <Form type="View number" /> {/* Pass any props needed */}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
@@ -73,5 +92,40 @@ const ownerData = [
         address: 'Laxmi Nagar, Thane West',
     },
 ];
+
+// Modal overlay style
+const modalOverlay = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1000,
+};
+
+// Modal content style
+const modalContent = {
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    padding: '20px',
+    maxWidth: '70%',
+    width: '100%',
+    position: 'relative',
+};
+
+// Close button style
+const closeButton = {
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    background: 'none',
+    border: 'none',
+    fontSize: '1.5rem',
+    cursor: 'pointer',
+};
 
 export default OwnerDetails;

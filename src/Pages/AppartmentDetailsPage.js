@@ -15,12 +15,13 @@ import LocalityReview from "../components/LocalityReview";
 import ResidentReview from "../components/ResidentReview";
 import SideCard from "../components/SideCard";
 import Header from "../components/Header";
+import Form from "../components/Form";
 
 function AppartmentDetailsPage() {
   return (
     <div className="app-container">
       <div className="main-content">
-        <Header/>
+        {/* <Header/> */}
         <ImageStack />
         <OwnerDetails />
         <Construction />

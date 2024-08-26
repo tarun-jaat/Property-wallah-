@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// Sample data
+import Form from './Form';
+
 const data = [
     {
         name: '1.15 - 2.11 Cr + Charges',
@@ -11,21 +12,23 @@ const data = [
 ];
 
 function ApartmentHead() {
-    // Styles for the card container
+    const [isFormOpen, setFormOpen] = React.useState(false);
+
+    const openForm = () => setFormOpen(true);
+    const closeForm = () => setFormOpen(false);
+
     const cardContainer = {
         display: 'flex',
-        alignItems:"center",
+        alignItems: "center",
         justifyContent: 'space-between',
-        alignItems: 'flex-start',
-        margin:"2%",
+        margin: "2%",
         width: '100%',
         padding: '16px',
         backgroundColor: '#fff',
         marginBottom: '20px',
-        marginTop:"20px"
+        marginTop: "20px"
     };
 
-    // Styles for the heading and details container
     const detailsContainer = {
         display: 'flex',
         flexDirection: 'column',
@@ -33,7 +36,6 @@ function ApartmentHead() {
         marginBottom: '12px',
     };
 
-    // Styles for the button container
     const buttonContainer = {
         marginTop: '12px',
     };
@@ -53,11 +55,61 @@ function ApartmentHead() {
                     </Typography>
                 </div>
                 <div style={buttonContainer}>
-                    <Button style={{textTransform: "capitalize"}}>Download Brochure</Button>
+                    <Button
+                        style={{ textTransform: "capitalize" }}
+                        onClick={openForm}
+                    >
+                        Download Brochure
+                    </Button>
                 </div>
             </div>
+
+            {/* Popup Form */}
+            {isFormOpen && (
+                <div style={modalOverlay}>
+                    <div style={modalContent}>
+                        <Button onClick={closeForm} style={closeButton}>X</Button>
+                        <Form type="Download Brochure" closeForm={closeForm} />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
+
+// Modal overlay style
+const modalOverlay = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1000,
+};
+
+// Modal content style
+const modalContent = {
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    padding: '20px',
+    maxWidth: '500px',
+    width: '100%',
+    position: 'relative',
+};
+
+// Close button style
+const closeButton = {
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    background: 'none',
+    border: 'none',
+    fontSize: '1.5rem',
+    cursor: 'pointer',
+};
 
 export default ApartmentHead;

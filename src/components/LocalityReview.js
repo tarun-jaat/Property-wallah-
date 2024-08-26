@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import RatingFeatures from './RatingFeatures';
 import RatingCard from './RatingCard';
+import { useNavigate } from 'react-router-dom';
 
 function LocalityReview() {
   // Define base styles
@@ -113,6 +114,8 @@ function LocalityReview() {
     };
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <div>
       <div style={{ ...responsiveStyles }}>
@@ -125,6 +128,7 @@ function LocalityReview() {
             style={buttonStyles}
             onMouseOver={(e) => (e.currentTarget.style.backgroundColor = buttonHoverStyles.backgroundColor)}
             onMouseOut={(e) => (e.currentTarget.style.backgroundColor = buttonStyles.backgroundColor)}
+            onClick={() => navigate("/write-review")}
           >
             Review your Society Locality
           </Button>

@@ -1,25 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Chip, Stack } from '@mui/material';
+import { Chip, Stack, Button } from '@mui/material'; // Ensure Button is imported
 import { useMediaQuery } from '@mui/material';
-import ResidentReviewCard from './ResidentReviewCard';
+import { useNavigate } from 'react-router-dom';
+import ResidentReviewCard from './ResidentReviewCard'; // Ensure this component is correctly implemented
 
 // Sample data for different types of reviews
 const reviewsData = {
   'Recommended': [
-    {
-      rate: 4.7,
-      positive: "It is hardly 5 to 7 mins walk from Korum Mall",
-      negative: "Sometimes it finds difficulty in getting vegetables as the municipality can come at any time.",
-      person: "Owner of Property",
-      time: "Posted 3y ago",
-    },
-    {
-      rate: 4.7,
-      positive: "It is hardly 5 to 7 mins walk from Korum Mall",
-      negative: "Sometimes it finds difficulty in getting vegetables as the municipality can come at any time.",
-      person: "Owner of Property",
-      time: "Posted 3y ago",
-    },
     {
       rate: 4.7,
       positive: "It is hardly 5 to 7 mins walk from Korum Mall",
@@ -62,6 +49,7 @@ const reviewsData = {
 };
 
 const ResidentHeader = () => {
+  const navigate = useNavigate();
   return (
     <div style={{ padding: '20px', margin: '2%', boxSizing: 'border-box' }}>
       <div className="container">
@@ -69,7 +57,10 @@ const ResidentHeader = () => {
           <div className="head" style={{ marginBottom: '16px' }}>
             <h6 className="heading" style={{ fontSize: '1.25rem', fontWeight: 'bold', margin: '0' }}>Reviews by Residents</h6>
           </div>
-          <Button style={{ marginTop: '16px', color: '#007bff', textTransform: 'capitalize', padding: '10px 16px', border: '1px solid #007bff', borderRadius: '4px', cursor: 'pointer' }}>
+          <Button
+            onClick={() => navigate('/all-reviews')} // For debugging
+            style={{ marginTop: '16px', color: '#007bff', textTransform: 'capitalize', padding: '10px 16px', border: '1px solid #007bff', borderRadius: '4px', cursor: 'pointer' }}
+          >
             View All
           </Button>
         </div>
