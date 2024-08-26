@@ -1,5 +1,7 @@
 import React from 'react';
-import Button from '@mui/material/Button'; // Importing Button component from Material-UI
+import Button from '@mui/material/Button';
+import RatingFeatures from './RatingFeatures';
+import RatingCard from './RatingCard';
 
 function LocalityReview() {
   // Define base styles
@@ -13,9 +15,8 @@ function LocalityReview() {
   };
 
   const headerStyles = {
-    display: 'flex', // Added display flex for alignment
+    display: 'flex',
     alignItems: 'center',
-    
     justifyContent: 'space-between',
     flexWrap: 'wrap', // Allow wrapping for responsiveness
   };
@@ -51,13 +52,38 @@ function LocalityReview() {
     backgroundColor: '#0056b3',
   };
 
-  // Add media queries with JavaScript
+  const part2 = {
+    border: "1px solid grey",
+    borderRadius: 10,
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: "3%",
+  };
+
+  const part2Responsive = {
+    display: 'flex',
+    flexDirection: 'row', // Default to row layout
+    flexWrap: 'wrap',
+    gap: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: "3%",
+  };
+
+  // Update styles based on screen size
   const updateStylesForScreenSize = () => {
-     if (window.matchMedia('(max-width: 768px)').matches) {
+    if (window.matchMedia('(max-width: 480px)').matches) {
       return {
         ...containerStyles,
-        padding: '15px',
-        margin: '10px',
+        padding: '10px',
+        margin: '5px',
+        part2: {
+          ...part2,
+          flexDirection: 'column', // Stack items vertically on small screens
+        },
       };
     }
     if (window.matchMedia('(max-width: 768px)').matches) {
@@ -65,15 +91,13 @@ function LocalityReview() {
         ...containerStyles,
         padding: '15px',
         margin: '10px',
+        part2: part2Responsive,
       };
     }
-    if (window.matchMedia('(max-width: 480px)').matches) {
-      return {
-        ...containerStyles,
-        padding: '10px',
-      };
-    }
-    return containerStyles;
+    return {
+      ...containerStyles,
+      part2: part2,
+    };
   };
 
   const [responsiveStyles, setResponsiveStyles] = React.useState(updateStylesForScreenSize);
@@ -90,45 +114,25 @@ function LocalityReview() {
   }, []);
 
   return (
-    <div style={responsiveStyles}>
-      <style>
-        {`
-          /* Responsive Styles */
-          @media (max-width: 768px) {
-            .header {
-              flex-direction: column;
-              align-items: flex-start;
-            }
-
-            .button {
-              margin-top: 12px;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .heading {
-              font-size: 1rem;
-            }
-
-            .button {
-              padding: 8px 12px;
-              margin-top: 10px;
-            }
-          }
-        `}
-      </style>
-      <div style={headerStyles}>
-        <div style={headStyles}>
-          <h6 style={headingStyles}>Locality Reviews</h6>
-          <p style={paragraphStyles}>for Laxmi Nagar, Thane West</p>
+    <div>
+      <div style={{ ...responsiveStyles }}>
+        <div style={headerStyles}>
+          <div style={headStyles}>
+            <h6 style={headingStyles}>Locality Reviews</h6>
+            <p style={paragraphStyles}>for Laxmi Nagar, Thane West</p>
+          </div>
+          <Button
+            style={buttonStyles}
+            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = buttonHoverStyles.backgroundColor)}
+            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = buttonStyles.backgroundColor)}
+          >
+            Review your Society Locality
+          </Button>
         </div>
-        <Button
-          style={buttonStyles}
-          onMouseOver={(e) => (e.currentTarget.style.backgroundColor = buttonHoverStyles.backgroundColor)}
-          onMouseOut={(e) => (e.currentTarget.style.backgroundColor = buttonStyles.backgroundColor)}
-        >
-          Review your Society Locality
-        </Button>
+        <div style={responsiveStyles.part2}>
+          <RatingCard />
+          <RatingFeatures />
+        </div>
       </div>
     </div>
   );

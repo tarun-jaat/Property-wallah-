@@ -6,10 +6,10 @@ function BuiderDetails() {
   return (
     <div style={main}>
         <div style={head}>
-            <AccountBoxIcon />
+            <AccountBoxIcon style={{color:"blue", fontSize:50}}/>
             <div>
-                <h6>Bilder Name</h6>
-                <p>VAJRA TOWER SALES TEAM</p>
+                <p>Bilder Name</p>
+                <p style={{fontSize:10, margin:0}}>VAJRA TOWER SALES TEAM</p>
             </div>
         </div>
         <div style={input}>
@@ -26,11 +26,11 @@ function BuiderDetails() {
                 <label>Self Use</label>
             </p>
             <div>
-                <input type='text' placeholder='Name'/>
+                <input type='text' placeholder='Name' style={input}/>
                 <br/>
-            <input type='email' placeholder='Email'/>
+            <input type='email' placeholder='Email' style={input}/>
             <br/>
-            <input type='number' placeholder='Phone Number'/>
+            <input type='number' placeholder='Phone Number' style={input}/>
             <br/>
             <input type='checkbox'/>
             <p>I agree to the Terms & Conditions and Privacy Policy</p>
@@ -42,10 +42,12 @@ function BuiderDetails() {
   )
 }
 const main={
-    backgroundColor:"rgba(255,255,255,0.1)",
-    border:"2px solid blue",
-    width:"50%",
-    margin:"auto"
+    backgroundColor: "rgba(255,255,255,0.1)",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Adding a box shadow
+    width: "50%",
+    margin: "auto",
+    padding: "10px", // Added padding for better spacing
+    borderRadius: "8px"
 };
 const head={
     display:"flex",
@@ -54,7 +56,11 @@ const head={
     gap:20
 };
 const input={
-    textAlign:"center"
+    textAlign:"center",
+    padding:5,
+    margin:5,
+    border:'1px solid grey',
+    borderRadius:5
 };
 
 export default BuiderDetails

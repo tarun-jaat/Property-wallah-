@@ -6,6 +6,8 @@ import SocietyReview from './SocietyReview';
 import { Button } from '@mui/material';
 import Explore from './Explore';
 import BuiderDetails from './BuiderDetails';
+import RatingFeatures from './RatingFeatures';
+import LocalityReview from './LocalityReview';
 
 const data = {
     
@@ -91,7 +93,10 @@ function ChooseProject() {
         <Explore/>
         <SocietyReview/>
         <ResidentReview/>
+        <LocalityReview/>
         <BuiderDetails/>
+        
+
     </div>
   )
 }
