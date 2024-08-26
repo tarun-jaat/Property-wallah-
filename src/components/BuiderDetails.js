@@ -44,7 +44,7 @@ function BuiderDetails() {
 const main={
     backgroundColor: "rgba(255,255,255,0.1)",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Adding a box shadow
-    width: "50%",
+    width: "60%",
     margin: "auto",
     padding: "10px", // Added padding for better spacing
     borderRadius: "8px"
@@ -57,8 +57,8 @@ const head={
 };
 const input={
     textAlign:"center",
-    padding:5,
-    margin:5,
+    width:"80%",
+    margin: "auto",
     border:'1px solid grey',
     borderRadius:5
 };

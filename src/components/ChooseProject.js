@@ -8,6 +8,7 @@ import Explore from './Explore';
 import BuiderDetails from './BuiderDetails';
 import RatingFeatures from './RatingFeatures';
 import LocalityReview from './LocalityReview';
+import FloorPlan from './FloorPlan';
 
 const data = {
     
@@ -89,6 +90,7 @@ function ChooseProject() {
   return (
     <div>
         <ImageBack/>
+        <FloorPlan/>
         <ShowDetails/>
         <Explore/>
         <SocietyReview/>
@@ -134,6 +136,7 @@ const text1={
 };
 const main={
     display:'flex',
+    flexWrap:"wrap",
     alignItems: 'center',
     justifyContent:"space-between",
     margin:"3%",
