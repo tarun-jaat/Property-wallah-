@@ -1,0 +1,59 @@
+.item-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 150px;
+  }
+  
+  .dropdown-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .list-item{
+    margin-left: 10px;
+  }
+  
+  .dropdown-header {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0066cc;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-subheader {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dropdown-menu li {
+    margin-bottom: 8px;
+  }
+  
+  .dropdown-menu li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .dropdown-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    display: block;
+    padding: 5px 0;
+  }
+  
+  .dropdown-menu a:hover {
+    color: #0066cc;
+  }
+  

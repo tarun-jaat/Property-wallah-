@@ -60,3 +60,28 @@ body {
   .side-card-container {
   }
 } */
+
+.app-container{
+  display:  flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-container{
+  flex-grow: 1;
+  
+  margin: 20px;
+} 
+.property-list{
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+}
+.main-layout{
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+}
+.faq{
+  display: flex;
+  align-items: start;
+}
