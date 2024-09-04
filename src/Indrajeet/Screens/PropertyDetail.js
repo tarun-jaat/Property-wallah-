@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
+
 function PropertyDetail() {
   const{id}=useParams();
   return (

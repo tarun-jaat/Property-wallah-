@@ -168,3 +168,58 @@
 .view-number-btn:hover {
   background-color: #b3ceec;
 }
+
+.property-image {
+  position: relative;
+}
+.property-image img {
+  width: 100%;
+  height: 250px; /* Increase the height of the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 8px;
+}
+/* Property image container */
+.property-image {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel .control-arrow {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 50%; /* Circular buttons */
+  width: 40px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  position: absolute; /* Absolute positioning */
+  transform: translateY(250%); /* Adjust vertical alignment */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.like-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 25px;
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Ensure like button is above the carousel */
+}
+
+.like-button:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Darker background on hover */
+}
+
+/* Heart icon inside the like button */
+.like-button span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

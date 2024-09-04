@@ -8,6 +8,7 @@
   
   .filter-section {
     margin-bottom: 20px;
+    
   }
   
   h3 {
@@ -15,7 +16,16 @@
     margin-bottom: 10px;
     color: #333;
   }
-  
+ .applied-filters{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+ }
+  .applied-filters{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
   .filter-label {
     font-size: 14px;
     color: #555;
